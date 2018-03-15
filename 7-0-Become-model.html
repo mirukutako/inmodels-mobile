@@ -97,6 +97,10 @@
         <symbol id="carret" viewBox="0 0 16 8.98">
           <path fill="currentcolor" d="M8 0L0 8.21l.75.77L8 1.54l7.25 7.44.75-.77L8 0z" data-name="UI Kit" />
         </symbol>
+        <symbol id="cross-X" viewBox="0 0 22.63 21.92">
+          <title>cross-X</title>
+          <path d="M11.31 9.9L1.41 0 .7.71l9.9 9.9L0 21.21l.71.71 10.6-10.61 10.61 10.61.71-.71L12.02 10.6l9.9-9.9-.71-.71z" />
+        </symbol>
         <symbol id="cross" viewBox="0 0 30 30">
           <path fill="currentcolor" stroke="currentcolor" d="M16 14V0h-1v14H0v1h15v15h1V15h14v-1z" data-name="UI Kit" />
         </symbol>
@@ -225,7 +229,7 @@
                                 </div>
                                 <div class="input-half">
                                   <div class="input-item">
-                                    <input class="input-field" type="number" id="model-age">
+                                    <input class="input-field" type="number" id="model-age" pattern="[0-9]">
                                     <label class="input-label" for="model-age">Age</label>
                                   </div>
                                 </div>
@@ -233,19 +237,19 @@
                               <div class="form-block__title">options</div>
                               <div class="input-row">
                                 <div class="input-item c4">
-                                  <input class="input-field" type="number" id="model-height" data-validation="number" data-validation-error-msg="required field">
+                                  <input class="input-field" type="number" pattern="[0-9]*" id="model-height" data-validation="number" data-validation-error-msg="required field">
                                   <label class="input-label" for="model-height">Height</label>
                                 </div>
                                 <div class="input-item c4">
-                                  <input class="input-field" type="number" id="model-bust" data-validation="number" data-validation-error-msg="required field">
+                                  <input class="input-field" type="number" pattern="[0-9]*" id="model-bust" data-validation="number" data-validation-error-msg="required field">
                                   <label class="input-label" for="model-bust">Bust</label>
                                 </div>
                                 <div class="input-item c4">
-                                  <input class="input-field" type="number" id="model-waist" data-validation="number" data-validation-error-msg="required field">
+                                  <input class="input-field" type="number" pattern="[0-9]*" id="model-waist" data-validation="number" data-validation-error-msg="required field">
                                   <label class="input-label" for="model-waist">Waist</label>
                                 </div>
                                 <div class="input-item c4">
-                                  <input class="input-field" type="number" id="model-hips" data-validation="number" data-validation-error-msg="required field">
+                                  <input class="input-field" type="number" pattern="[0-9]*" id="model-hips" data-validation="number" data-validation-error-msg="required field">
                                   <label class="input-label" for="model-hips">Hips</label>
                                 </div>
                                 <div class="input-item c2">
@@ -260,7 +264,7 @@
                               <div class="form-block__title">Сontacts</div>
                               <div class="input-row">
                                 <div class="input-item c2">
-                                  <input class="input-field" type="tel" id="model-phone">
+                                  <input class="input-field" type="tel" id="model-phone" pattern="[0-9]*">
                                   <label class="input-label" for="model-phone">Phone</label>
                                 </div>
                                 <div class="input-item c2">
@@ -312,44 +316,84 @@
                               </div>
                               <div class="form-block__title">photo</div>
                               <div class="input-row">
-                                <div class="input-item c2 drop-item" action="/upload">
-                                  <div class="dz-message">
+                                <div class="input-item c2 drop-item">
+                                  <label class="input-label" for="photo-face">
                                     <span class="drop-item__icon">
                                       <svg class="cross">
                                         <use xlink:href="#cross"></use>
                                       </svg>
                                     </span>
-                                    <div class="input-label">Add photo face</div>
+                                    <input class="input-field drop-input" type="file" id="photo-face" data-validation="mime size" data-validation-allowing="jpg, png, gif" data-validation-max-size="2M" data-validation-error-msg-size="Загрузите файл не больше 2Мб"
+                                      data-validation-error-msg-mime="Вы можете загрузить изображения или документ .pdf">
+                                    <span>Add photo face</span>
+                                  </label>
+                                  <div class="file-name-wrap">
+                                    <span class="file-name"></span>
+                                    <a class="clear-file" href="#">
+                                      <svg class="cross-X">
+                                        <use xlink:href="#cross-X"></use>
+                                      </svg>
+                                    </a>
                                   </div>
                                 </div>
-                                <div class="input-item c2 drop-item" action="/upload">
-                                  <div class="dz-message">
+                                <div class="input-item c2 drop-item">
+                                  <label class="input-label" for="photo-profile">
                                     <span class="drop-item__icon">
                                       <svg class="cross">
                                         <use xlink:href="#cross"></use>
                                       </svg>
                                     </span>
-                                    <div class="input-label">Add profile photo</div>
+                                    <input class="input-field drop-input" type="file" id="photo-profile" data-validation="mime size" data-validation-allowing="jpg, png, gif" data-validation-max-size="2M" data-validation-error-msg-size="Загрузите файл не больше 2Мб"
+                                      data-validation-error-msg-mime="Вы можете загрузить изображения или документ .pdf">
+                                    <span>Add profile photo</span>
+                                  </label>
+                                  <div class="file-name-wrap">
+                                    <span class="file-name"></span>
+                                    <a class="clear-file" href="#">
+                                      <svg class="cross-X">
+                                        <use xlink:href="#cross-X"></use>
+                                      </svg>
+                                    </a>
                                   </div>
                                 </div>
-                                <div class="input-item c2 drop-item" action="/upload">
-                                  <div class="dz-message">
+                                <div class="input-item c2 drop-item">
+                                  <label class="input-label" for="photo-3/4">
                                     <span class="drop-item__icon">
                                       <svg class="cross">
                                         <use xlink:href="#cross"></use>
                                       </svg>
                                     </span>
-                                    <div class="input-label">Add photo 3/4</div>
+                                    <input class="input-field drop-input" type="file" id="photo-3/4" data-validation="mime size" data-validation-allowing="jpg, png, gif" data-validation-max-size="2M" data-validation-error-msg-size="Загрузите файл не больше 2Мб"
+                                      data-validation-error-msg-mime="Вы можете загрузить изображения или документ .pdf">
+                                    <span>Add photo 3/4</span>
+                                  </label>
+                                  <div class="file-name-wrap">
+                                    <span class="file-name"></span>
+                                    <a class="clear-file" href="#">
+                                      <svg class="cross-X">
+                                        <use xlink:href="#cross-X"></use>
+                                      </svg>
+                                    </a>
                                   </div>
                                 </div>
-                                <div class="input-item c2 drop-item" action="/upload">
-                                  <div class="dz-message">
+                                <div class="input-item c2 drop-item">
+                                  <label class="input-label" for="photo-length">
                                     <span class="drop-item__icon">
                                       <svg class="cross">
                                         <use xlink:href="#cross"></use>
                                       </svg>
                                     </span>
-                                    <div class="input-label">Add photo in full length</div>
+                                    <input class="input-field drop-input" type="file" id="photo-length" data-validation="mime size" data-validation-allowing="jpg, png, gif" data-validation-max-size="2M" data-validation-error-msg-size="Загрузите файл не больше 2Мб"
+                                      data-validation-error-msg-mime="Вы можете загрузить изображения или документ .pdf">
+                                    <span>Add photo in full length</span>
+                                  </label>
+                                  <div class="file-name-wrap">
+                                    <span class="file-name"></span>
+                                    <a class="clear-file" href="#">
+                                      <svg class="cross-X">
+                                        <use xlink:href="#cross-X"></use>
+                                      </svg>
+                                    </a>
                                   </div>
                                 </div>
                                 <div class="input-item input-textarea">
@@ -394,7 +438,6 @@
         <div class="modal-container modal-menu">
           <div class="modal-menu__l-1"></div>
           <div class="modal-menu__l-2"></div>
-          <a class="link-dev" href="http://flxmd.by/" target="_blank">Made in Flex.media</a>
           <div class="modal-menu-inner">
             <div class="pop-close closePopup">
               <svg class="cross">
@@ -434,16 +477,16 @@
                 <a class="navigation-link__item modal-link business-request" href="./6-0-contacts.html">Business request</a>
               </li>
               <li class="pages-links__item pages-links--social">
-                <a class="navigation-link__item modal-link" href="#">facebook</a>
+                <a class="navigation-link__item modal-link no-barba" href="http://facebook.com">facebook</a>
               </li>
               <li class="pages-links__item">
-                <a class="navigation-link__item modal-link" href="#">instagram</a>
+                <a class="navigation-link__item modal-link no-barba" href="#">instagram</a>
               </li>
               <li class="pages-links__item">
-                <a class="navigation-link__item modal-link" href="#">vkontakte</a>
+                <a class="navigation-link__item modal-link no-barba" href="/bitrix/admin/">vkontakte</a>
               </li>
               <li class="pages-links__item">
-                <a class="navigation-lang link-lang" href="#">рус</a>
+                <a class="navigation-lang link-lang no-barba" href="#">рус</a>
               </li>
             </ul>
           </div>
